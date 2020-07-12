@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-player-info',
   templateUrl: './player-info.component.html',
-  styleUrls: ['./player-info.component.scss']
+  styleUrls: ['./player-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PlayerInfoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class PlayerInfoComponent {
+  constructor() {}
 }

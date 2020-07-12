@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-game-controls',
   templateUrl: './game-controls.component.html',
-  styleUrls: ['./game-controls.component.scss']
+  styleUrls: ['./game-controls.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GameControlsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class GameControlsComponent {
+  constructor() {}
 }
