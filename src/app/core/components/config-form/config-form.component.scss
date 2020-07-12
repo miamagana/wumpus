@@ -1,0 +1,11 @@
+.form-container {
+  height: 40vh;
+  > form {
+    margin-top: 3rem;
+    > mat-form-field {
+      margin-top: 1.25rem;
+      width: 20rem;
+      font-size: x-large;
+    }
+  }
+}

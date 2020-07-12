@@ -1,0 +1,38 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="form-container">
+  <form
+    [formGroup]="configForm"
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+    fxFlex
+  >
+    <mat-form-field>
+      <mat-label>Select the board length</mat-label>
+      <input matInput formControlName="boardLength" type="number" required />
+      <mat-error *ngIf="configForm.get('boardLength').hasError('min')">
+        The minimun number of cells is 4x4
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select the desired number of arrows</mat-label>
+      <input matInput formControlName="arrows" type="number" required />
+      <mat-error *ngIf="configForm.get('arrows').hasError('min')">
+        The minimun number of arrows is 0
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select desired number of pits</mat-label>
+      <input matInput formControlName="pits" type="number" required />
+      <mat-error *ngIf="configForm.get('pits').hasError('min')">
+        The minimum number of pits is 1
+      </mat-error>
+    </mat-form-field>
+    <button
+      [disabled]="!configForm.valid"
+      mat-raised-button
+      color="primary"
+      (click)="submitForm()"
+    >
+      Play!
+    </button>
+  </form>
+</div>
