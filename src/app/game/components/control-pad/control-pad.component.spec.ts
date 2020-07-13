@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ControlPadComponent } from './control-pad.component';
+import { DirectionEnum } from '../../models';
 
 describe('ControlPadComponent', () => {
   let component: ControlPadComponent;
@@ -8,9 +8,8 @@ describe('ControlPadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ControlPadComponent ]
-    })
-    .compileComponents();
+      declarations: [ControlPadComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,12 @@ describe('ControlPadComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit on emitAction', () => {
+    spyOn(component.action, 'emit');
+    const payload = DirectionEnum.LEFT;
+    component.emitAction(payload);
+    expect(component.action.emit).toHaveBeenCalledWith(payload);
   });
 });

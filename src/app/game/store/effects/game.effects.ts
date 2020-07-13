@@ -30,8 +30,9 @@ export class GameEffects {
         if (dead) {
           window.alert('You are dead!');
           return of(GameActions.resetGame());
+        } else {
+          return of(GameActions.checkPerceptions());
         }
-        return of(GameActions.checkPerceptions());
       })
     )
   );
@@ -51,11 +52,6 @@ export class GameEffects {
       switchMap(([, board, player, wumpus]) => {
         const playerPosition = player.position;
         const cell = board[playerPosition.x][playerPosition.y];
-        const dead = (cell.wumpus && wumpus.alive) || cell.pit;
-        if (dead) {
-          window.alert('You are dead!');
-          return of(GameActions.resetGame());
-        }
         if (cell.gold) {
           return of(GameActions.pickGold());
         }

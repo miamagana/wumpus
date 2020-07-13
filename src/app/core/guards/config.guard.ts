@@ -10,7 +10,7 @@ import { take, map } from 'rxjs/operators';
 })
 export class ConfigGuard implements CanActivate {
   constructor(private readonly store: Store<fromCore.CoreState>) {}
-  canActivate(): Observable<boolean | UrlTree> {
+  canActivate(): Observable<boolean> {
     return this.store.pipe(
       select(fromCore.getConfigured),
       map((configured) => {
