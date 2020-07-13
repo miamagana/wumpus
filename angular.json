@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "wumpus"
+  "defaultProject": "wumpus",
+  "cli": {
+    "analytics": "08e993cc-7e67-4bb7-aba4-9906d6dcb609"
+  }
 }
