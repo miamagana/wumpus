@@ -1,6 +1,7 @@
 import { IConfig } from '../../models';
 import { createReducer, Action, on } from '@ngrx/store';
 import * as ConfigActions from '../actions/config.actions';
+import * as fromGame from '../../../game/store';
 
 export interface IConfigState extends IConfig {
   configured: boolean;
@@ -19,6 +20,9 @@ const configurationReducer = createReducer(
     ...state,
     configured: true,
     ...action.payload,
+  })),
+  on(fromGame.resetGame, () => ({
+    ...initialState,
   }))
 );
 

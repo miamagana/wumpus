@@ -1,0 +1,41 @@
+<div
+  fxLayout="row"
+  fxLayoutAlign="space-around center"
+  fxflex
+  class="pad-container"
+>
+  <button
+    mat-icon-button
+    (click)="emitAction(directionEnum.LEFT)"
+    [disabled]="disable"
+    disableRipple
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <div fxLayout="column" fxLayoutAlign="space-between center">
+    <button
+      mat-icon-button
+      class="upper"
+      (click)="emitAction(directionEnum.UP)"
+      [disabled]="disable"
+      disableRipple
+    >
+      <mat-icon>keyboard_arrow_up</mat-icon></button
+    ><button
+      mat-icon-button
+      (click)="emitAction(directionEnum.DOWN)"
+      [disabled]="disable"
+      disableRipple
+    >
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </div>
+  <button
+    mat-icon-button
+    (click)="emitAction(directionEnum.RIGTH)"
+    [disabled]="disable"
+    disableRipple
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

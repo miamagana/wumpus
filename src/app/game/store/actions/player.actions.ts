@@ -10,4 +10,5 @@ export const shoot = createAction(
   props<{ payload: DirectionEnum }>()
 );
 export const pickGold = createAction('[Player] Pick Gold');
+export const killWumpus = createAction('[Player] Kill Wumpus');
 export const exitCave = createAction('[Player] Exit Cave');

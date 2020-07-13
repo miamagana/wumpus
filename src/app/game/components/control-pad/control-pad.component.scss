@@ -1,0 +1,14 @@
+.pad-container {
+  .mat-icon-button {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 4rem;
+    mat-icon {
+      font-size: 4rem;
+    }
+    &.upper {
+      margin-bottom: 2rem;
+    }
+  }
+}

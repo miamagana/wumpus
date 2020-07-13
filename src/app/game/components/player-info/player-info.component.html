@@ -1,1 +1,9 @@
-<p>player-info works!</p>
+<div fxLayout="row" fxFlex>
+  <div fxLayout="column" fxLayoutAlign="space-around center" fxFlex>
+    <h1><strong>Player Information</strong></h1>
+    <h2>You are at [{{ info.position.x }},{{ info.position.y }}]</h2>
+    <span class="material-icons" [ngClass]="{ golden: info.hasGold }">
+      military_tech
+    </span>
+  </div>
+</div>

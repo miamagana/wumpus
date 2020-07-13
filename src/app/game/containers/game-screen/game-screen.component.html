@@ -1,5 +1,11 @@
-<div fxLayout="row" fxLayoutAlign="space-around center" fxFlex>
-  <app-player-info></app-player-info>
-  <app-game-output></app-game-output>
-  <app-game-controls></app-game-controls>
+<div fxLayout="row" fxLayoutAlign="space-around start" fxFlex>
+  <app-game-controls
+    [arrows]="arrows$ | async"
+    (move)="move($event)"
+    (shoot)="shoot($event)"
+  ></app-game-controls>
+  <app-game-output
+    [perceptions]="(playerInfo$ | async)?.perceptions"
+  ></app-game-output>
+  <app-player-info [info]="playerInfo$ | async"></app-player-info>
 </div>

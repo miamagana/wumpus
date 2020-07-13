@@ -9,6 +9,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './store/reducers';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ControlPadComponent } from './components/control-pad/control-pad.component';
+import { effects } from './store/effects';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const routes: Route[] = [
   { path: '', redirectTo: 'screen', pathMatch: 'full' },
@@ -22,13 +27,17 @@ const routes: Route[] = [
     GameOutputComponent,
     PlayerInfoComponent,
     GameControlsComponent,
+    ControlPadComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FlexLayoutModule,
     StoreModule.forFeature('game', reducers),
-    EffectsModule.forFeature([]),
+    EffectsModule.forFeature(effects),
+    FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSnackBarModule,
   ],
 })
 export class GameModule {}

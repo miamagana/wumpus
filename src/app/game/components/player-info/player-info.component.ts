@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IPlayerState } from '../../models';
 
 @Component({
   selector: 'app-player-info',
@@ -7,5 +8,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlayerInfoComponent {
+  @Input() info: IPlayerState;
   constructor() {}
 }

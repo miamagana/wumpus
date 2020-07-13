@@ -1,1 +1,21 @@
-<p>game-controls works!</p>
+<div
+  fxLayout="column"
+  fxLayoutAlign="space-around center"
+  class="controls-container"
+>
+  <div fxLayout="row">
+    <div fxLayout="column" fxFlex fxLayoutAlign=" center">
+      <h1><strong>Move Player</strong></h1>
+      <app-control-pad (action)="moveAction($event)"></app-control-pad>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxLayout="column" fxFlex fxLayoutAlign=" center">
+      <h1><strong>Shoot</strong></h1>
+      <app-control-pad
+        [disable]="!!!arrows"
+        (action)="shootAction($event)"
+      ></app-control-pad>
+    </div>
+  </div>
+</div>
